@@ -139,8 +139,10 @@ export default function Home() {
     },
   ];
 
+  // const [userId, setUserId] = useState(null);
+
   return (
-    <main className=" bg-green-50 p-8 flex min-h-screen flex-col items-center justify-between">
+    <main className="bg-green-50 p-4 flex min-h-screen flex-col items-center justify-between ml-52 mt-20">
 
 
       <div class="flex mb-5 w-full px-20px md:p-30px py-40px rounded border border-gray-300 bg-white">

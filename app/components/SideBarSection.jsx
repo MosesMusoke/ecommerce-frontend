@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import ProductItem from '../products/productItem'
+import ImageSlider from './ImageSlider';
 
 const SideBarSection = () => {
 
@@ -38,7 +39,7 @@ const SideBarSection = () => {
     ];
 
   return (
-    <section className=" grid grid-cols-12 gap-8 w-full h-screen mx-auto px-4 py-8 lg:py-10">
+    <section className=" grid grid-cols-12 gap-8 w-full h-screen mx-auto px-1 py-8 lg:py-10">
       {/* Sidebar */}
       <div className="col-span-3">
         <div className="bg-white p-4 rounded-lg shadow-md">
@@ -110,7 +111,7 @@ const SideBarSection = () => {
                 <span className="ml-2">5 stars</span>
                 </label>
             </div>
-            {/* Add more rating options as needed */}
+            
           </div>
 
           {/* Add more filters as needed */}
@@ -122,25 +123,26 @@ const SideBarSection = () => {
         <div className="bg-white p-8 rounded-lg shadow-md">
           <h1 className="text-4xl font-extrabold mb-4 text-gray-800">Discover Amazing Products</h1>
           <p className="text-lg text-gray-600 mb-8">Explore a wide range of products that suit your needs and preferences.</p>
-          <a href="#" className="inline-flex items-center justify-center px-6 py-3 text-lg font-medium text-white rounded-lg bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-300">
+          <a href="/products" className="inline-flex items-center justify-center px-6 py-3 text-lg font-medium text-white rounded-lg bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-300">
             Shop Now
           </a>
         </div>
 
-        <div className="flex items-center mt-3 justify-around flex-wrap gap-3">
-        {products.map((product) => (
-          <ProductItem
-            key={product.id}
-            name={product.product_name}
-            description={product.product_description}
-            price={product.price}
-            quantity={product.quantity}
-            categoryId={product.categoryId}
-            storeName={product.store_name}
-            imageUrl={'/laptop.jpeg'}
-          />
-        ))}
-      </div>
+        <div className="flex overflow-hidden h-2/3 items-center m-0 pb-10">
+          {/* {products.map((product) => (
+          //   <ProductItem
+          //     key={product.id}
+          //     name={product.product_name}
+          //     description={product.product_description}
+          //     price={product.price}
+          //     quantity={product.quantity}
+          //     categoryId={product.categoryId}
+          //     storeName={product.store_name}
+          //     imageUrl={'/laptop.jpeg'}
+          //   />
+          // ))} */}
+          <ImageSlider />
+        </div>
 
       </div>
     </section>

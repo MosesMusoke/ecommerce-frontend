@@ -11,7 +11,7 @@ const NewProductForm = ({ onProductSubmit }) => {
     quantity: 0,
     category_name: "",
     store_name: "",
-    image_url: "",
+    image_url: null,
   });
 
   const [errors, setErrors] = useState({
@@ -84,7 +84,7 @@ const NewProductForm = ({ onProductSubmit }) => {
     }
 
     try {
-      const response = await fetch("http://localhost:3030/products", {
+      const response = await fetch("http://localhost:3030/api/v1/products", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -202,10 +202,9 @@ const NewProductForm = ({ onProductSubmit }) => {
           Image URL
         </label>
         <input
-          type="text"
+          type="file"
           id="image_url"
           name="image_url"
-          placeholder="Image URL"
           value={newProduct.image_url}
           onChange={handleInputChange}
           className="p-2 border-gray-300 border-[1px] rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
